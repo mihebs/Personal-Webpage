@@ -1,0 +1,280 @@
+/* ajustanto elementos do body, como fonte, background, etc. */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('imgs/background.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+li {
+    text-align: justify;
+}
+
+.paragrafo {
+    text-align: justify;
+}
+
+/* customizando o hero */
+.hero-imagem {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("imgs/fotoMEBS.jpg");
+  height: 50%;
+  /* para posicionar a imagem no centro */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* texto presente no centro do hero */
+.hero-texto {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* customizando a linha do tempo - timeline */
+* {
+    box-sizing: border-box;
+  }
+  
+  .timeline-formacao {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .timeline-formacao::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgb(206, 206, 206);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* container e conteúdo */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* customizando as bolinhas da timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -17px;
+    background-color: rgb(247, 247, 247);
+    border: 4px solid #000000;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* posiciona o container para a esquerda */
+  .esquerda {
+    left: 0;
+  }
+  
+  /* posiciona o container para a direita */
+  .direita {
+    left: 50%;
+  }
+  
+  .esquerda::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  .direita::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  .direita::after {
+    left: -16px;
+  }
+  
+  .conteudo {
+    padding: 20px 30px;
+    background-color: rgb(214, 214, 214);
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* timeline responsiva em telas com menos de 600 pixels de largura */
+  @media screen and (max-width: 600px) {
+    .timeline::after {
+      left: 31px;
+    }
+  
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+    .esquerda::after, .direita::after {
+      left: 15px;
+    }
+  
+    .direita {
+      left: 0%;
+    }
+  }
+
+/* estilizando as imagens dentro dos containers na esquerda */
+.container.esquerda .conteudo img {
+    border-radius: 50%; /* p/ tornar a imagem circular */
+    width: 80px; 
+    height: 80px; 
+    float: left; 
+    margin-right: 20px; /* adiciona um espaçamento à direita para separar a imagem do texto */
+}
+
+/* estilizando as imagens dentro dos containers na direita */
+.container.direita .conteudo img {
+    border-radius: 50%; 
+    width: 80px; 
+    height: 80px; 
+    float: right; 
+    margin-left: 20px; 
+}
+
+/* estilizando o texto ao lado da imagem */
+.conteudo p {
+    margin-top: 0; /* remove o espaçamento superior padrão do parágrafo */
+    text-align: justify; /* justifica o texto */
+    overflow: hidden; /* evita que o texto se sobreponha à imagem */
+    padding-bottom: 10px; 
+}
+
+/* customizando o forms */
+/* ajeitando o tipo texto */
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px;  
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+
+/* ajeitando o tipo email */
+input[type=email], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+  
+/* ajeitando o botão enviar */
+  input[type=submit] {
+    background-color: #a0a0a0;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #a0a0a0;
+  }
+  
+  /* preenchendo o forms */
+  .formulario {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  /* estilização dos ícones das redes sociais */
+  .redes-sociais{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 8px;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  .fa-github {
+    background: #252525;
+    color: white;
+  }
+
+/* estilizando o footer */
+  .footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(151, 151, 151);
+    color: white;
+    text-align: center;
+  }
